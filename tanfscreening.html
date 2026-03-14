@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TANF Screening Form</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="PSH.html">PSH</a>
+    <a href="RRH.html">RRH</a>
+    <a href="TANF.html">TANF</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+
+        <h1>TANF Rental Assistance Screening</h1>
+
+        <p>
+            Please complete this screening form to determine eligibility for TANF Rental Assistance.  
+            Fields marked with <span class="required">*</span> are required.
+        </p>
+
+        <form id="tanfForm">
+
+            <!-- PERSONAL INFORMATION -->
+            <h2>Personal Information</h2>
+
+            <div class="form-group">
+                <label for="fullname">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullname" name="fullName" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+                <label for="address">Current Address <span class="required">*</span></label>
+                <input type="text" id="address" name="address" required />
+            </div>
+
+            <div class="form-group">
+                <label for="householdSize">Household Size <span class="required">*</span></label>
+                <input type="number" id="householdSize" name="householdSize" min="1" required />
+            </div>
+
+            <!-- CHILDREN & ELIGIBILITY -->
+            <h2>Eligibility Questions</h2>
+
+            <div class="form-group">
+                <label>Does your household include at least one child under age 18? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="hasChild" value="Yes" required /> Yes</label>
+                    <label><input type="radio" name="hasChild" value="No" /> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Are you currently pregnant in your third trimester?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="pregnant" value="Yes" /> Yes</label>
+                    <label><input type="radio" name="pregnant" value="No" /> No</label>
+                </div>
+            </div>
+
+            <!-- INCOME -->
+            <h2>Income Information</h2>
+
+            <div class="form-group">
+                <label for="monthlyIncome">Total Monthly Household Income <span class="required">*</span></label>
+                <input type="number" id="monthlyIncome" name="monthlyIncome" min="0" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+                <label>Do you currently receive any of the following benefits?</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="benefits" value="SNAP" /> SNAP (Food Stamps)</label>
+                    <label><input type="checkbox" name="benefits" value="Childcare Assistance" /> Childcare Assistance</label>
+                    <label><input type="checkbox" name="benefits" value="Medicaid/CHIP" /> Medicaid or CHIP</label>
+                    <label><input type="checkbox" name="benefits" value="WIC" /> WIC</label>
+                    <label><input type="checkbox" name="benefits" value="None" /> None</label>
+                </div>
+            </div>
+
+            <!-- HOUSING NEED -->
+            <h2>Housing Need</h2>
+
+            <div class="form-group">
+                <label>What type of housing crisis are you experiencing? <span class="required">*</span></label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="housingCrisis" value="Eviction Risk" /> At risk of eviction</label>
+                    <label><input type="checkbox" name="housingCrisis" value="Past Due Rent" /> Past‑due rent</label>
+                    <label><input type="checkbox" name="housingCrisis" value="Move-In Assistance Needed" /> Need help moving into housing</label>
+                    <label><input type="checkbox" name="housingCrisis" value="Other" /> Other</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="crisisDetails">Please describe your housing crisis <span class="required">*</span></label>
+                <textarea id="crisisDetails" name="crisisDetails" required></textarea>
+            </div>
+
+            <!-- RESOURCES -->
+            <h2>Resources Used</h2>
+
+            <div class="form-group">
+                <label>What resources have you attempted to use? <span class="required">*</span></label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="resourcesUsed" value="Family/Friends" /> Family/Friends</label>
+                    <label><input type="checkbox" name="resourcesUsed" value="Community Organizations" /> Community Organizations</label>
+                    <label><input type="checkbox" name="resourcesUsed" value="Faith-Based Organizations" /> Faith‑Based Organizations</label>
+                    <label><input type="checkbox" name="resourcesUsed" value="Government Programs" /> Government Programs</label>
+                    <label><input type="checkbox" name="resourcesUsed" value="Landlord Payment Plan" /> Payment Plan with Landlord</label>
+                    <label><input type="checkbox" name="resourcesUsed" value="None" /> None</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="resourceOutcome">Please describe the outcomes of your attempts <span class="required">*</span></label>
+                <textarea id="resourceOutcome" name="resourceOutcome" required></textarea>
+            </div>
+
+            <!-- STABILITY PLAN -->
+            <h2>Housing Stability Plan</h2>
+
+            <div class="form-group">
+                <label for="stabilityPlan">Describe your plan for maintaining stable housing <span class="required">*</span></label>
+                <textarea id="stabilityPlan" name="stabilityPlan" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="timeline">Estimated timeline to reach stability <span class="required">*</span></label>
+                <select id="timeline" name="timeline" required>
+                    <option value="">Select one</option>
+                    <option value="1-3 months">1–3 months</option>
+                    <option value="3-6 months">3–6 months</option>
+                    <option value="6-12 months">6–12 months</option>
+                    <option value="12+ months">12+ months</option>
+                </select>
+            </div>
+
+            <!-- ADDITIONAL -->
+            <h2>Additional Information</h2>
+
+            <div class="form-group">
+                <label for="additionalInfo">Anything else you’d like us to know?</label>
+                <textarea id="additionalInfo" name="additionalInfo"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit TANF Screening</button>
+
+        </form>
+
+        <div class="success-message" id="successMessage">
+            Thank you! Your application has been prepared in your email client.
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="PSH.html">PSH</a>
+        <a href="RRH.html">RRH</a>
+        <a href="TANF.html">TANF</a>
+    </div>
+
+    <p>Equal Housing Opportunity • Switchpoint Community Resource Center</p>
+    <p>© 2026 Switchpoint – Design by PattyJamesHDM</p>
+</footer>
+
+<!-- EMAIL SCRIPT -->
+<script>
+document.getElementById('tanfForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {};
+
+    for (let [key, value] of formData.entries()) {
+        if (key === "benefits" || key === "housingCrisis" || key === "resourcesUsed") {
+            if (!data[key]) data[key] = [];
+            data[key].push(value);
+        } else {
+            data[key] = value;
+        }
+    }
+
+    if (data.benefits) data.benefits = data.benefits.join(", ");
+    if (data.housingCrisis) data.housingCrisis = data.housingCrisis.join(", ");
+    if (data.resourcesUsed) data.resourcesUsed = data.resourcesUsed.join(", ");
+
+    const emailBody = `
+TANF Rental Assistance Screening Submission
+
+PERSONAL INFORMATION
+Name: ${data.fullName}
+Email: ${data.email}
+Phone: ${data.phone}
+Address: ${data.address}
+Household Size: ${data.householdSize}
+
+ELIGIBILITY
+Child Under 18: ${data.hasChild}
+Pregnant (3rd Trimester): ${data.pregnant || "No"}
+
+INCOME
+Monthly Income: $${data.monthlyIncome}
+Benefits Received: ${data.benefits || "None"}
+
+HOUSING NEED
+Crisis Type: ${data.housingCrisis || "N/A"}
+Crisis Details:
+${data.crisisDetails}
+
+RESOURCES USED
+Resources Attempted: ${data.resourcesUsed || "None"}
+Outcomes:
+${data.resourceOutcome}
+
+HOUSING STABILITY PLAN
+Plan:
+${data.stabilityPlan}
+Timeline: ${data.timeline}
+
+ADDITIONAL INFORMATION
+${data.additionalInfo || "None"}
+
+Submitted: ${new Date().toLocaleString()}
+`.trim();
+
+    const subject = encodeURIComponent(`TANF Screening - ${data.fullName}`);
+    const body = encodeURIComponent(emailBody);
+
+    window.location.href = 
+        `mailto:patty.james@switchpointcrc.org?subject=${subject}&body=${body}`;
+
+    document.getElementById("successMessage").style.display = "block";
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PSH Screening</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <a href="index.html">Home</a>
+    <a href="PSH.html">PSH</a>
+    <a href="RRH.html">RRH</a>
+    <a href="TANF.html">TANF</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+
+        <h1>PSH Screening Form</h1>
+        <p>
+            Please complete the screening form below to determine eligibility for the 
+            Permanent Supportive Housing (PSH) program. 
+            Fields marked with <span class="required">*</span> are required.
+        </p>
+
+        <form id="assistanceForm">
+
+            <!-- PERSONAL INFORMATION -->
+            <h2>Personal Information</h2>
+
+            <div class="form-group">
+                <label for="fullname">Full Name <span class="required">*</span></label>
+                <input type="text" id="fullname" name="fullName" required />
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address <span class="required">*</span></label>
+                <input type="text" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address <span class="required">*</span></label>
+                <input type="text" id="address" name="address" required />
+            </div>
+
+            <div class="form-group">
+                <label for="householdSize">Household Size <span class="required">*</span></label>
+                <input type="number" id="householdSize" name="householdSize" min="1" required />
+            </div>
+
+            <!-- ELIGIBILITY -->
+            <h2>Eligibility Questions</h2>
+
+            <div class="form-group">
+                <label>Have you received assistance from Switchpoint in the past 12 months? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="receivingPSH" value="Yes" required /> Yes</label>
+                    <label><input type="radio" name="receivingPSH" value="No" /> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Are you currently employed or actively seeking employment? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="employmentStatus" value="Employed" required /> Currently Employed</label>
+                    <label><input type="radio" name="employmentStatus" value="Seeking" /> Actively Seeking Employment</label>
+                    <label><input type="radio" name="employmentStatus" value="Neither" /> Neither</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="monthlyIncome">Total Monthly Household Income <span class="required">*</span></label>
+                <input type="number" id="monthlyIncome" name="monthlyIncome" min="0" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+                <label for="monthlyRent">Monthly Rent Amount <span class="required">*</span></label>
+                <input type="number" id="monthlyRent" name="monthlyRent" min="0" step="0.01" required />
+            </div>
+
+            <div class="form-group">
+                <label for="rentArrears">Amount of Rent Owed (if any)</label>
+                <input type="number" id="rentArrears" name="rentArrears" min="0" step="0.01" />
+            </div>
+
+            <div class="form-group">
+                <label>Do you have any dependents under 18? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="hasDependents" value="Yes" required /> Yes</label>
+                    <label><input type="radio" name="hasDependents" value="No" /> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="numDependents">If yes, how many?</label>
+                <input type="number" id="numDependents" name="numDependents" min="0" />
+            </div>
+
+            <!-- CRISIS INFORMATION -->
+            <h2>Crisis Information</h2>
+
+            <div class="form-group">
+                <label for="crisisDescription">Describe your current housing crisis <span class="required">*</span></label>
+                <textarea id="crisisDescription" name="crisisDescription" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Are you currently facing eviction? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="evictionRisk" value="Yes" required /> Yes</label>
+                    <label><input type="radio" name="evictionRisk" value="No" /> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="evictionDate">If yes, what is your eviction date?</label>
+                <input type="text" id="evictionDate" name="evictionDate" />
+            </div>
+
+            <!-- RESOURCES -->
+            <h2>Resources Used</h2>
+
+            <div class="form-group">
+                <label>What resources have you already used? <span class="required">*</span></label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="resources" value="Family/Friends" /> Family/Friends</label>
+                    <label><input type="checkbox" name="resources" value="Other Organizations" /> Other Organizations</label>
+                    <label><input type="checkbox" name="resources" value="Faith-Based Organizations" /> Faith-Based Organizations</label>
+                    <label><input type="checkbox" name="resources" value="Government Assistance" /> Government Assistance</label>
+                    <label><input type="checkbox" name="resources" value="Payment Plan with Landlord" /> Payment Plan with Landlord</label>
+                    <label><input type="checkbox" name="resources" value="Food Banks" /> Food Banks</label>
+                    <label><input type="checkbox" name="resources" value="Unemployment Benefits" /> Unemployment Benefits</label>
+                    <label><input type="checkbox" name="resources" value="None" /> None</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="resourceDetails">Please describe the assistance you've already attempted <span class="required">*</span></label>
+                <textarea id="resourceDetails" name="resourceDetails" required></textarea>
+            </div>
+
+            <!-- SELF-SUFFICIENCY PLAN -->
+            <h2>Self‑Sufficiency Plan</h2>
+
+            <div class="form-group">
+                <label for="selfSufficiencyPlan">Describe your plan for achieving stability <span class="required">*</span></label>
+                <textarea id="selfSufficiencyPlan" name="selfSufficiencyPlan" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="timeline">Estimated timeline for achieving stability <span class="required">*</span></label>
+                <select id="timeline" name="timeline" required>
+                    <option value="">Select one</option>
+                    <option value="1-3 months">1–3 months</option>
+                    <option value="3-6 months">3–6 months</option>
+                    <option value="6-12 months">6–12 months</option>
+                    <option value="12+ months">12+ months</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="obstacles">What obstacles do you anticipate?</label>
+                <textarea id="obstacles" name="obstacles"></textarea>
+            </div>
+
+            <!-- ADDITIONAL -->
+            <h2>Additional Information</h2>
+
+            <div class="form-group">
+                <label for="additionalInfo">Anything else you’d like us to know?</label>
+                <textarea id="additionalInfo" name="additionalInfo"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Submit PSH Screening</button>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            Thank you! Your application has been prepared in your email client.
+        </div>
+
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="PSH.html">PSH</a>
+        <a href="RRH.html">RRH</a>
+        <a href="TANF.html">TANF</a>
+    </div>
+
+    <p>Equal Housing Opportunity • Switchpoint Community Resource Center</p>
+    <p>© 2026 Switchpoint – Design by PattyJamesHDM</p>
+</footer>
+
+<!-- FORM EMAIL SCRIPT -->
+<script>
+document.getElementById('assistanceForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {};
+    for (let [key, value] of formData.entries()) {
+        if (key === 'resources') {
+            if (!data.resources) data.resources = [];
+            data.resources.push(value);
+        } else {
+            data[key] = value;
+        }
+    }
+
+    if (data.resources) data.resources = data.resources.join(', ');
+
+    const emailBody = `
+Permanent Supportive Housing (PSH) Screening Submission
+
+PERSONAL INFORMATION
+Name: ${data.fullName}
+Email: ${data.email}
+Phone: ${data.phone}
+Address: ${data.address}
+Household Size: ${data.householdSize}
+
+ELIGIBILITY
+Received Assistance: ${data.receivingPSH}
+Employment Status: ${data.employmentStatus}
+Monthly Income: $${data.monthlyIncome}
+Monthly Rent: $${data.monthlyRent}
+Rent Arrears: $${data.rentArrears || '0'}
+Dependents: ${data.hasDependents}
+Dependents Count: ${data.numDependents || 'N/A'}
+
+CRISIS INFORMATION
+${data.crisisDescription}
+
+Eviction Risk: ${data.evictionRisk}
+Eviction Date: ${data.evictionDate || 'N/A'}
+
+RESOURCES USED
+${data.resources || 'None'}
+Details: ${data.resourceDetails}
+
+SELF-SUFFICIENCY PLAN
+${data.selfSufficiencyPlan}
+Timeline: ${data.timeline}
+Obstacles: ${data.obstacles || 'None'}
+
+ADDITIONAL INFORMATION
+${data.additionalInfo || 'None'}
+
+Submitted On: ${new Date().toLocaleString()}
+`.trim();
+
+    const subject = encodeURIComponent(`PSH Screening - ${data.fullName}`);
+    const body = encodeURIComponent(emailBody);
+
+    window.location.href = `mailto:patty.james@switchpointcrc.org?subject=${subject}&body=${body}`;
+
+    document.getElementById("successMessage").style.display = "block";
+});
+</script>
+
+</body>
+</html>

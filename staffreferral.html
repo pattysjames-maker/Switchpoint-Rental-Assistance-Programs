@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Referral Form</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="PSH.html">PSH</a>
+    <a href="RRH.html">RRH</a>
+    <a href="TANF.html">TANF</a>
+</nav>
+
+<div class="container">
+    <div class="card">
+
+        <h1> Referral Form</h1>
+        <p>
+           This form should be completed by staff or community member when referring a client to the Housing Department for rental assistance consideration. The length of the grant depends on client eligibility and available funding. In some cases, the Housing Committee may ony approve assistance for a short amount of time. Rental assistance is not guaranteed and should only be considered after all other available resources have been explored.
+        </p>
+
+        <form id="rrhReferralForm">
+
+           
+            <h2>Client Information</h2>
+
+            <div class="form-group">
+                <label for="clientName">Client Name <span class="required">*</span></label>
+                <input type="text" id="clientName" name="clientName" required />
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth <span class="required">*</span></label>
+                <input type="text" id="dob" name="dob" placeholder="MM/DD/YYYY" required />
+            </div>
+
+            <div class="form-group">
+                <label for="householdSize">Household Size <span class="required">*</span></label>
+                <input type="number" id="householdSize" name="householdSize" min="1" required />
+            </div>
+
+            <div class="form-group">
+                <label>Shelter Resident or Drop‑In or Community Member? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="shelterStatus" value="Shelter Resident" required /> Shelter Resident</label>
+                    <label><input type="radio" name="shelterStatus" value="Drop-In" /> Drop-In</label>
+                    <label><input type="radio" name="shelterStatus" value="communty member" /> Community Member</label>
+
+                </div>
+            </div>
+
+            
+            <h2>Homeless Status</h2>
+
+            <div class="form-group">
+                <label for="currentLocation">Where did the client sleep last night?</label>
+                <textarea id="currentLocation" name="currentLocation" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="homelessDuration">How long have they been homeless?</label>
+                <textarea id="homelessDuration" name="homelessDuration" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Do they meet HUD's definition of literally homeless?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="hudDefinition" value="Yes" required /> Yes</label>
+                    <label><input type="radio" name="hudDefinition" value="No" /> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="hudExplain">Please explain:</label>
+                <textarea id="hudExplain" name="hudExplain"></textarea>
+            </div>
+            <div class="form-group">
+                <label>What type of housing crisis are you experiencing? <span class="required">*</span></label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="housingCrisis" value="Eviction Risk" /> At risk of eviction</label>
+                    <label><input type="checkbox" name="housingCrisis" value="Past Due Rent" /> Past‑due rent</label>
+                    <label><input type="checkbox" name="housingCrisis" value="Move-In Assistance Needed" /> Need help moving into housing</label>
+                    <label><input type="checkbox" name="housingCrisis" value="Other" /> Other</label>
+                </div>
+                <div class="form-group">
+                <label for="additionalInfo">If the client is past due or at risk of eviction, please describe the situation and indicate the amount currently owed.</label>
+                <textarea id="additionalInfo" name="additionalInfo"></textarea>
+            </div>
+          
+            <h2>Income & Financial Stability</h2>
+
+            <div class="form-group">
+                <label>Does anyone in the household have income? <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="hasIncome" value="Yes" required /> Yes</label>
+                    <label><input type="radio" name="hasIncome" value="No" /> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="incomeSource">Source of income (employment, SSI, SSDI, etc.):</label>
+                <textarea id="incomeSource" name="incomeSource"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="monthlyIncome">Monthly Income Amount:</label>
+                <input type="number" id="monthlyIncome" name="monthlyIncome" step="0.01" />
+            </div>
+
+            <div class="form-group">
+                <label for="incomePlan">If no income, what is their plan to obtain income?</label>
+                <textarea id="incomePlan" name="incomePlan"></textarea>
+            </div>
+
+         
+            <h2>Housing Plan</h2>
+
+            <div class="form-group">
+                <label for="retainHousing">How will they retain housing once the grant ends?</label>
+                <textarea id="retainHousing" name="retainHousing" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="selfSufficiency">Have you discussed a self-sufficiency plan with the client? Please explain:</label>
+                <textarea id="selfSufficiency" name="selfSufficiency" required></textarea>
+            </div>
+
+
+       
+            <h2>Barriers & Risks</h2>
+
+            <div class="form-group">
+                <label for="barriers">List any barriers: evictions, criminal history, poor credit, physical or mental health conditions, etc.</label>
+                <textarea id="barriers" name="barriers" required></textarea>
+            </div>
+
+            
+            <h2>Additional Questions</h2>
+
+            <div class="form-group">
+                <label for="rrhFit">Why are you referring this client?</label>
+                <textarea id="rrhFit" name="rrhFit" required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="extensionNeed">If more than one months is needed, how much and why?</label>
+                <textarea id="extensionNeed" name="extensionNeed"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Has the client received rental assistance from us before?</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="pastAssistance" value="Yes" required /> Yes</label>
+                    <label><input type="radio" name="pastAssistance" value="No" /> No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="additionalInfo">Anything else the committee should consider?</label>
+                <textarea id="additionalInfo" name="additionalInfo"></textarea>
+            </div>
+
+           
+            <h2>Signature</h2>
+
+            <div class="form-group">
+                <label for="Signature"> Name of person filling this form out <span class="required">*</span></label>
+                <input type="text" id="Signature" name="Signature" required />
+            </div>
+            <div class="form-group">
+                <label for="agencie">Please list the agency you represent. If you are not affiliated with a community partner agency, please describe your relationship to the client.</label>
+                <textarea id="Agency" name="agency"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="signatureDate">Date <span class="required">*</span></label>
+                <input type="text" id="signatureDate" name="signatureDate" placeholder="MM/DD/YYYY" required />
+            </div>
+
+            <button type="submit" class="submit-btn">Submit Referral</button>
+
+        </form>
+
+        <div class="success-message" id="successMessage">
+            Thank you! This referral has been prepared in your email client.
+        </div>
+
+    </div>
+</div>
+
+
+<footer>
+    <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="PSH.html">PSH</a>
+        <a href="RRH.html">RRH</a>
+        <a href="TANF.html">TANF</a>
+    </div>
+
+    <p>Equal Housing Opportunity • Switchpoint Community Resource Center</p>
+    <p>© 2026 Switchpoint – Design by PattyJamesHDM</p>
+</footer>
+
+
+<script>
+document.getElementById("ReferralForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const formData = new FormData(this);
+    const data = {};
+
+    for (let [key, value] of formData.entries()) {
+        data[key] = value;
+    }
+
+    const body = encodeURIComponent(`
+ Referral Form Submission
+
+CLIENT INFORMATION
+Name: ${data.clientName}
+DOB: ${data.dob}
+Household Size: ${data.householdSize}
+Shelter/Drop-in: ${data.shelterStatus}
+
+HOMELESS STATUS
+Where they slept last night: ${data.currentLocation}
+Duration Homeless: ${data.homelessDuration}
+Meets HUD Definition: ${data.hudDefinition}
+Explanation: ${data.hudExplain}
+
+INCOME & FINANCIAL STABILITY
+Has Income: ${data.hasIncome}
+Source of Income: ${data.incomeSource}
+Monthly Income: ${data.monthlyIncome}
+Income Plan if None: ${data.incomePlan}
+
+HOUSING PLAN
+How they will retain housing: ${data.retainHousing}
+Self-Sufficiency Plan: ${data.selfSufficiency}
+
+CLIENT ENGAGEMENT
+Meeting with CM: ${data.engagement}
+Follow-through with goals: ${data.goalFollowThrough}
+
+BARRIERS / RISKS
+Barriers: ${data.barriers}
+
+ADDITIONAL QUESTIONS
+Why are you referring this client?: ${data.rrhFit}
+If more than one months is needed, how much and why?: ${data.extensionNeed}
+Has the client received rental assistance from us before: ${data.pastAssistance}
+Additional info: ${data.additionalInfo}
+
+STAFF SIGNATURE
+Staff Name: ${data.staffSignature}
+Please list the agency you represent. If you are not affiliated with a community partner agency, please describe your relationship to the client.:${agencie}
+Date: ${data.signatureDate}
+
+Submitted: ${new Date().toLocaleString()}
+    `.trim());
+
+    const subject = encodeURIComponent(` Referral - ${data.clientName}`);
+
+    window.location.href = `mailto:patty.james@switchpointcrc.org?subject=${subject}&body=${body}`;
+
+    document.getElementById("successMessage").style.display = "block";
+});
+</script>
+
+</body>
+</html>
