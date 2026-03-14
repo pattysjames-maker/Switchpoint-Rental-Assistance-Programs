@@ -6,7 +6,7 @@
 }
 
  body {
-    font-family: 'Inter', 'Roboto', 'Open Sans', sans-serif;
+    font-family:'Times New Roman', Times, serif;
     background: linear-gradient(to bottom, #172e54 0%, rgb(253, 126, 20)90%);
     color: #172e54;
     line-height: 1.6;
@@ -55,18 +55,20 @@ nav a:hover {
 h1 {
     color: #172e54;
     margin-bottom: 20px;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 h2 {
     color: rgba(215, 105, 47, 1);
     margin-bottom: 15px;
     margin-top: 20px;
+    font-size: 2rem;
 }
 
 h3 {
     color: #172e54;
     margin: 15px 0 10px;
+    font-size: 1rem;
 }
 
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css" />
 </head>
 
-<body>
+<body> 
 
 
 <nav>
@@ -15,6 +15,9 @@
     <a href="PSH.html">PSH</a>
     <a href="RRH.html">RRH</a>
     <a href="TANF.html">TANF</a>
+    <a href="homearp.html">HomeArp</a>
+    <a href="Sucess.html">Housing Success Stories</a>
+    <a href="staffreferral.html"> Agency Staff or Community Member Referral Form</a>
 </nav>
 
 <div class="container">
@@ -196,19 +199,22 @@
 
 <footer>
     <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="PSH.html">PSH</a>
-        <a href="RRH.html">RRH</a>
-        <a href="TANF.html">TANF</a>
+    <a href="index.html">Home</a>
+    <a href="PSH.html">PSH</a>
+    <a href="RRH.html">RRH</a>
+    <a href="TANF.html">TANF</a>
+    <a href="homearp.html">HomeArp</a>
+    <a href="Sucess.html">Housing Success Stories</a>
+    <a href="staffreferral.html"> Agency Staff or Community Member Referral Form</a>
     </div>
+
 
     <p>Equal Housing Opportunity • Switchpoint Community Resource Center</p>
     <p>© 2026 Switchpoint – Design by PattyJamesHDM</p>
 </footer>
 
-
 <script>
-document.getElementById("ReferralForm").addEventListener("submit", function (e) {
+document.getElementById("staffreferral").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const formData = new FormData(this);
@@ -219,7 +225,7 @@ document.getElementById("ReferralForm").addEventListener("submit", function (e) 
     }
 
     const body = encodeURIComponent(`
- Referral Form Submission
+Referral Form Submission
 
 CLIENT INFORMATION
 Name: ${data.clientName}
@@ -233,6 +239,9 @@ Duration Homeless: ${data.homelessDuration}
 Meets HUD Definition: ${data.hudDefinition}
 Explanation: ${data.hudExplain}
 
+HOUSING CRISIS
+Details: ${data.evictionDetails}
+
 INCOME & FINANCIAL STABILITY
 Has Income: ${data.hasIncome}
 Source of Income: ${data.incomeSource}
@@ -243,34 +252,28 @@ HOUSING PLAN
 How they will retain housing: ${data.retainHousing}
 Self-Sufficiency Plan: ${data.selfSufficiency}
 
-CLIENT ENGAGEMENT
-Meeting with CM: ${data.engagement}
-Follow-through with goals: ${data.goalFollowThrough}
-
 BARRIERS / RISKS
 Barriers: ${data.barriers}
 
 ADDITIONAL QUESTIONS
-Why are you referring this client?: ${data.rrhFit}
-If more than one months is needed, how much and why?: ${data.extensionNeed}
-Has the client received rental assistance from us before: ${data.pastAssistance}
+Why referring this client: ${data.rrhFit}
+Extension request: ${data.extensionNeed}
+Past Assistance: ${data.pastAssistance}
 Additional info: ${data.additionalInfo}
 
 STAFF SIGNATURE
-Staff Name: ${data.staffSignature}
-Please list the agency you represent. If you are not affiliated with a community partner agency, please describe your relationship to the client.:${agencie}
+Name: ${data.staffSignature}
+Agency: ${data.agency}
 Date: ${data.signatureDate}
 
 Submitted: ${new Date().toLocaleString()}
-    `.trim());
+`.trim());
 
-    const subject = encodeURIComponent(` Referral - ${data.clientName}`);
+    const subject = encodeURIComponent(`Referral - ${data.clientName}`);
 
     window.location.href = `mailto:patty.james@switchpointcrc.org?subject=${subject}&body=${body}`;
 
     document.getElementById("successMessage").style.display = "block";
-});
-</script>
-
+});</script>
 </body>
 </html>
